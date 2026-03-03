@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
+import mentorasImg from "@/assets/mentoras.png";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-      {/* Subtle background pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent/40 via-background to-secondary/30" />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -44,15 +44,13 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-primary/20 via-accent to-secondary overflow-hidden shadow-2xl">
-              <div className="w-full h-full flex items-center justify-center text-primary/40">
-                <div className="text-center space-y-3">
-                  <Heart className="h-16 w-16 mx-auto" />
-                  <p className="font-serif text-lg">Foto das Mentoras</p>
-                </div>
-              </div>
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src={mentorasImg}
+                alt="Mentoras do PsiPraQueTeQuero"
+                className="w-full h-full object-cover"
+              />
             </div>
-            {/* Decorative element */}
             <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
             <div className="absolute -top-4 -right-4 w-32 h-32 bg-accent/60 rounded-full blur-2xl" />
           </motion.div>

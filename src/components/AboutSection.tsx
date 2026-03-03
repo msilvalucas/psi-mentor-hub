@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Users, Award, Shield } from "lucide-react";
+import mentorasImg from "@/assets/mentoras.png";
 
 const stats = [
   { icon: Users, label: "Horas de atendimento", value: "+7.000" },
@@ -12,24 +13,21 @@ const AboutSection = () => {
     <section id="sobre" className="py-24 bg-card">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Image placeholder */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7 }}
           >
-            <div className="aspect-square rounded-2xl bg-gradient-to-tr from-primary/15 via-accent/50 to-secondary overflow-hidden shadow-lg">
-              <div className="w-full h-full flex items-center justify-center text-primary/30">
-                <div className="text-center space-y-3">
-                  <Users className="h-16 w-16 mx-auto" />
-                  <p className="font-serif text-lg">Foto das Mentoras</p>
-                </div>
-              </div>
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src={mentorasImg}
+                alt="Mentoras do PsiPraQueTeQuero"
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
 
-          {/* Text */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -58,7 +56,6 @@ const AboutSection = () => {
               uma prática clínica ética, segura e autoral.
             </p>
 
-            {/* Stats */}
             <div className="grid grid-cols-3 gap-4 pt-4">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center space-y-1">
